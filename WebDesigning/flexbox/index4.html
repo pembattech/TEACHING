@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Example</title>
+    <style>
+        .flex-container {
+            display: flex;
+        }
+
+        .item-shrink {
+            background-color: lightblue;
+            padding: 10px;
+            margin: 5px;
+            text-align: center;
+            flex: 1;
+            /* Makes all items share space equally */
+            flex-shrink: 1;
+            /* Allows all items to shrink proportionally */
+        }
+
+
+        .item-grow {
+            background-color: lightblue;
+            padding: 10px;
+            margin: 5px;
+            text-align: center;
+        }
+
+        .item-grow#sec-item {
+            /* Select second child */
+            flex-grow: 1;
+            /* Makes Item 2 grow twice as much */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Equal-Sized Items with Flex-Shrink</h1>
+    <p>This example creates a row layout where all items share the available space equally using flex: 1;. Additionally,
+        flex-shrink: 1; is applied to allow all items to shrink proportionally if the container size is reduced and
+        there's not enough space for their initial size. This ensures no item overflows the container.</p>
+    <div class="flex-container">
+        <div class="item-shrink">Item 1</div>
+        <div class="item-shrink">This is a longer item Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam sit eum molestiae quasi quo eaque, nostrum ad dolores. Veniam assumenda necessitatibus aliquam excepturi ad quo dicta vel nulla cum blanditiis!</div>
+        <div class="item-shrink">Item 3</div>
+    </div>
+
+    <hr>
+
+    <h1>Simple Row with Flex-Grow</h1>
+    <p>This example creates a simple row layout with three items. The second item has flex-grow: 2; applied, making it
+        expand to fill the remaining space in the container twice as much as the other items.</p>
+    <div class="flex-container">
+        <div class="item-grow">Item 1</div>
+        <div class="item-grow" id="sec-item">Item 2 (Flex-Grow: 2)</div>
+        <div class="item-grow">Item 3</div>
+    </div>
+</body>
+
+</html>

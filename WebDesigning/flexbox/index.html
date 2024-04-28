@@ -1,0 +1,32 @@
+<!-- Responsive Navbar -->
+
+<style>
+    .nav-container {
+      display: flex;
+      background-color: #333;
+      color: white;
+      padding: 10px;
+    }
+  
+    .nav-item {
+      flex: 1;  /* Makes items share space equally */
+      text-align: center;
+      padding: 10px;
+      margin:10px;
+      color: red;
+      background-color: white;
+    }
+  
+    @media only screen and (max-width: 768px) {
+      .nav-container { /* Adjust layout for smaller screens */
+        flex-direction: column;
+      }
+    }
+  </style>
+  
+  <div class="nav-container">
+    <div class="nav-item">Home</div>
+    <div class="nav-item">About</div>
+    <div class="nav-item">Contact</div>
+  </div>
+  
