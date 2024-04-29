@@ -1,0 +1,38 @@
+<!-- Nesting Grids: -->
+<!-- Grid allows you to create nested grids for even more complex layouts. Imagine a product card with an image and details section. The details section itself can be a nested grid for further organization: -->
+
+<style>
+    .product-card {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 10px;
+    }
+
+    .product-image {
+        width: 100%;
+    }
+
+    .product-details {
+        padding: 10px;
+        border: 1px solid #ddd;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+    }
+
+    .details-grid p {
+        text-align: justify;
+    }
+</style>
+
+<div class="product-card">
+    <img src="./android-screen-mirroring.avif" alt="Product image" class="product-image">
+    <div class="product-details">
+        <h3>Android Phone</h3>
+        <div class="details-grid">
+            <p>Price: $100</p>
+            <p>Rating: 4.5 stars</p>
+        </div>
+        <button>Add to Cart</button>
+    </div>
+</div>

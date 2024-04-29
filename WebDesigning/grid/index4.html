@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid with Areas Example</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 100px 100px 100px;
+            grid-gap: 10px;
+            grid-template-areas:
+                "header header header"
+                "sidebar main main"
+                "footer footer footer";
+        }
+
+        .header {
+            grid-area: header;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: lightgreen;
+            text-align: center;
+            line-height: 100px;
+
+        }
+
+        .main {
+            grid-area: main;
+            background-color: lightcoral;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: tomato;
+            line-height: 100px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                /* Single column for smaller screens */
+                grid-template-areas:
+                    "header"
+                    "sidebar"
+                    "main"
+                    "footer";
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="header">Header</div>
+        <div class="sidebar">Sidebar</div>
+        <div class="main">Main Content</div>
+        <div class="footer">Footer Content</div>
+    </div>
+</body>
+
+</html>
