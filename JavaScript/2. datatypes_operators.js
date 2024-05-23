@@ -25,15 +25,17 @@ let uniqueSymbol1 = Symbol("description"); // Unique identifier
 console.log(uniqueSymbol); // Output: Symbol(description) (unique value)
 
 console.log(uniqueSymbol == uniqueSymbol1);
+
+
 // BigInt
 let bigIntNumber = 12345678901234567890n; // BigInt literal
 console.log(typeof bigIntNumber); // Output: bigint
 
 
 // Example of precision between number and bigint
-// 9007199254740992 == 9007199254740993
+console.log(9007199254740992 == 9007199254740993);
 
-// 9007199254740992n == 9007199254740993n
+console.log(9007199254740992n == 9007199254740993n)
 
 
 // ---------------------------------------------------------------------------
@@ -48,12 +50,14 @@ let person = {
 };
 
 // Array
-let fruits = ["apple", "banana", "orange"];
+let fruits = ["apple", "banana", "orange", 1];
 
 // Function
 function greet(name) {
   console.log("Hello, " + name + "!");
 }
+
+
 
 // Operators
 
