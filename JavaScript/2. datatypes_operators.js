@@ -21,7 +21,10 @@ let emptyValue = null;
 // Symbol
 let uniqueSymbol = Symbol("description"); // Unique identifier
 console.log(uniqueSymbol); // Output: Symbol(description) (unique value)
+let uniqueSymbol1 = Symbol("description"); // Unique identifier
+console.log(uniqueSymbol); // Output: Symbol(description) (unique value)
 
+console.log(uniqueSymbol == uniqueSymbol1);
 // BigInt
 let bigIntNumber = 12345678901234567890n; // BigInt literal
 console.log(typeof bigIntNumber); // Output: bigint
