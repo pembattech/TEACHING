@@ -24,7 +24,7 @@ let couponCode = "SUMMER20";
 if (couponCode === "SUMMER20") {
   let discount = amount * 0.1; // 10% discount
   console.log("You've received a", discount, "discount!");
-  console.log("Total payable:", amount - discount);
+  console.log("Total payable:", amount - discouknt);
 } else if (couponCode === "FALLSALE") {
   let discount = amount * 0.15; // 15% discount
   console.log("You've received a", discount, "discount!");
