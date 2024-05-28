@@ -1,4 +1,4 @@
-// if statement
+// if else statement
 
 // 1. Checking Product Availability and Price:
 let product = "laptop";
@@ -24,7 +24,7 @@ let couponCode = "SUMMER20";
 if (couponCode === "SUMMER20") {
   let discount = amount * 0.1; // 10% discount
   console.log("You've received a", discount, "discount!");
-  console.log("Total payable:", amount - discouknt);
+  console.log("Total payable:", amount - discount);
 } else if (couponCode === "FALLSALE") {
   let discount = amount * 0.15; // 15% discount
   console.log("You've received a", discount, "discount!");
@@ -48,7 +48,7 @@ if (age >= 18) {
 
 
 // 3. Traffic Light Simulator:
-let light = "red";
+let light = "ared";
 
 if (light === "red") {
   console.log("Stop!");

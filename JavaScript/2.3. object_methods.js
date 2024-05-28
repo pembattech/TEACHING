@@ -1,7 +1,8 @@
 // Adding Properties to Objects:
 // 1. Dot notation (object.property = value): Creates a new property or modifies an existing one.
-const person = { name: "Alice" };
+const person = { name: "Alice"};
 person.age = 30; // Adds the "age" property with value 30
+console.log(person['name'])
 
 // 2. Bracket notation (object['property'] = value): Similar to dot notation, but useful for creating properties with dynamic names (e.g., from user input).
 const options = {};

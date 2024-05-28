@@ -4,6 +4,9 @@ console.log(a); // Output:- [ 'apple', 'mango' ]
 a[0] = 'banana';
 console.log(a); // Output:- [ 'banana', 'mango' ]
 
+
+
+
 // Imutable
 let b = 'grapes';
 console.log(b); // Output:- grapes
