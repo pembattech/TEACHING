@@ -41,7 +41,7 @@ switch (letterGrade) {
         console.log("Satisfactory performance. You can improve.");
         break;
     case "D":
-        consolelog("Passing grade, but consider studying more next time.");
+        console.log("Passing grade, but consider studying more next time.");
         break;
     case "F":
         console.log("You need to put in more effort. Consider retaking the course.");

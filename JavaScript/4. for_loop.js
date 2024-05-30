@@ -2,7 +2,7 @@
 
 // 1. Printing numbers from 1 to 5
 for (let i = 1; i <= 5; i++) {
-  console.log(i);
+  console.log(i); // 1 2 3 4 5
 }
 
 
@@ -53,8 +53,8 @@ for (let i = 0; i < rows; i++) {
 const names = ["Alice", "Bob", "Charlie", "David"];
 
 for (let i = 0; i < names.length; i++) {
-  if (names[i] === "Charlie") {
-    console.log("Found Charlie at index", i);
+  if (names[2] === "Charlie") {
+    console.log("Found Charlie at index", 2);
     break; // Exit the loop once Charlie is found
   }
 }
