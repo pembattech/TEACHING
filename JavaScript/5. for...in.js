@@ -30,8 +30,8 @@ console.log(product); // { name: "T-Shirt", price: true, isOnSale: true }
 
 // Checking for Property Existence:
 const user = {
-    username: "johndoe",
-    email: "johndoe@example.com"
+    username: "pemba",
+    email: "pemba@example.com"
 };
 
 const hasNameProperty = "name" in user; // false (name doesn't exist)

@@ -18,3 +18,16 @@ for (const fruit of fruits) {
   console.log(fruit); // No specific order guaranteed
 }
 
+/*
+  Contrustor: a constructor is a special type of function used to create and initialize objects.
+    It is typically used in conjunction with the new keyword to create instances of an object.
+    Constructors are used to set up initial values for object properties and to perform any setup or
+    initialization that the object requires.
+
+
+  Instance: An instance is an individual object created from a constructor function or class.
+    It represents a concrete realization of the blueprint defined by the constructor or class.
+    Instances have properties and methods defined by the constructor or class and can maintain their
+    own state.
+*/
+
