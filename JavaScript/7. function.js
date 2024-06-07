@@ -50,6 +50,8 @@ const greet = name => "Greetings, " + name;
 const greeting = greet("Henry");
 console.log(greeting); // Output: Greetings, Henry
 
+
+
 // 2. Multiple Lines with Explicit Return:
 const calculateVolume = (length, width, height) => {
     const volume = length * width * height;

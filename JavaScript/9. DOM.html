@@ -1,0 +1,97 @@
+<!-- 1. Changing Element Content: -->
+<!-- This code displays a paragraph with an initial message. Clicking the button triggers a JavaScript function that selects the paragraph element using its `id` and modifies its content. -->
+<!DOCTYPE html>
+<html>
+<body>
+  <p id="message">Click the button to change the message!</p>
+  <button onclick="changeMessage()">Change Message</button>
+
+  <script>
+    function changeMessage() {
+      const messageElement = document.getElementById("message");
+      messageElement.textContent = "The message has been changed!";
+    }
+  </script>
+</body>
+</html>
+
+<!-- 2. Adding and Removing Elements -->
+<!-- This code demonstrates adding elements dynamically. It creates an unordered list (`<ul>`) and a button. Clicking the button triggers a function that creates a new list item (`<li>`) with the text "New Task" and appends it to the existing list. -->
+<!DOCTYPE html>
+<html>
+<body>
+  <ul id="taskList"></ul>
+  <button onclick="addTask()">Add Task</button>
+
+  <script>
+    function addTask() {
+      const taskList = document.getElementById("taskList");
+      const newListItem = document.createElement("li");
+      newListItem.textContent = "New Task";
+      taskList.appendChild(newListItem);
+    }
+  </script>
+</body>
+</html>
+
+
+<!-- 3. Toggling Element Visibility -->
+<!-- This code showcases toggling element visibility. It defines a paragraph with initial hidden content. Clicking the button triggers a function that checks the current display style of the paragraph. If it's hidden, the function displays it, and vice versa. -->
+<!DOCTYPE html>
+<html>
+<body>
+  <p id="hiddenText" style="display: none;">This is hidden text!</p>
+  <button onclick="toggleText()">Show/Hide Text</button>
+
+  <script>
+    function toggleText() {
+      const hiddenText = document.getElementById("hiddenText");
+      if (hiddenText.style.display === "none") {
+        hiddenText.style.display = "block";
+      } else {
+        hiddenText.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+<!-- 4. Modifying Element Styles -->
+<!-- This code demonstrates changing element styles. It defines a heading (`<h1>`) and a button. Clicking the button triggers a function that selects the heading element and modifies its inline style by setting the text color to red. -->
+<!DOCTYPE html>
+<html>
+<body>
+  <h1 id="heading">Welcome!</h1>
+  <button onclick="changeColor()">Change Color</button>
+
+  <script>
+    function changeColor() {
+      const heading = document.getElementById("heading");
+      heading.style.color = "red";
+    }
+  </script>
+</body>
+</html>
+
+<!-- 5. Removing Elements: -->
+<!-- The removeChild method allows you to remove an element from its parent's child node list. -->
+<!DOCTYPE html>
+<html>
+<body>
+  <ul id="myList">
+    <li>Item 1</li>
+    <li>Item 2</li>
+  </ul>
+  <button onclick="changeSecondItem()">Change Second Item Text</button>
+
+  <script>
+    function changeSecondItem() {
+      const myList = document.getElementById("myList");
+      const firstItem = myList.firstChild; // Get the first child (li)
+      const secondItem = firstItem.nextSibling; // Move to the next sibling (li)
+      secondItem.textContent = "Modified Item!";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!--
+1. Accessing Elements by Tag Name
+This program demonstrates selecting all `<p>` (paragraph) elements on the webpage using `getElementsByTagName`. It loops through the resulting collection and changes the text color of each paragraph to red.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h1>Main Heading</h1>
+  <p>This is a paragraph.</p>
+  <p class="special">This is a special paragraph.</p>
+  <button onclick="changeParagraphs()">Change Paragraphs!</button>
+
+  <script>
+    function changeParagraphs() {
+      const allParagraphs = document.getElementsByTagName("p");
+      for (let paragraph of allParagraphs) {
+        paragraph.style.color = "red";
+      }
+    }
+  </script>
+</body>
+
+</html>
+
+<!--
+2. Targeting Elements by Class Name
+This program showcases targeting elements with a specific class name. It uses `getElementsByClassName` to select
+all elements with the class "important" and then sets a yellow background color for them.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<body>
+  <div class="container">
+    <p>Normal paragraph</p>
+    <p class="important">This is important!</p>
+  </div>
+  <button onclick="highlightImportant()">Highlight Important!</button>
+
+  <script>
+    function highlightImportant() {
+      const importantParagraphs = document.getElementsByClassName("important");
+      for (let paragraph of importantParagraphs) {
+        paragraph.style.backgroundColor = "yellow";
+      }
+    }
+  </script>
+</body>
+
+</html>
+
+
+<!--
+3. Selecting the First Matching Element
+  This program utilizes `querySelector` to target the first element matching the selector. In this case, it selects
+  the first `
+  <h1>` (heading) element and modifies its content when a button is clicked.
+-->
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h1 id="main-heading">Welcome!</h1>
+  <button id="change-button">Change Heading</button>
+
+  <script>
+    const changeButton = document.querySelector("#change-button");
+    changeButton.addEventListener("click", function () {
+      console.log("clicked!");
+      const heading = document.querySelector("h1"); // Selects the first h1 element
+      heading.textContent = "New Heading Content!";
+    });
+  </script>
+</body>
+
+</html>
+
+
+<!--
+4. Selecting All Matching Elements
+
+  This program employs `querySelectorAll` to retrieve a list of all `<img>` (image) elements. It then iterates
+  through this list using `forEach` and adds a blue border style to each image.
+-->
+<!DOCTYPE html>
+<html>
+
+<body>
+  <img src="image1.png" alt="Image 1">
+  <img src="image2.png" alt="Image 2">
+  <button onclick="addBorders()">Add Borders to Images</button>
+
+  <script>
+    function addBorders() {
+      const allImages = document.querySelectorAll("img");
+      allImages.forEach(image => image.style.border = "2px solid blue");
+    }
+  </script>
+</body>
+
+</html>
+
+
+<!-- 3. Dynamic Heading Class Control -->
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h1 id="myHeading" class="default">This is a heading</h1>
+  <button onclick="addClass()">Add Highlighted Class</button>
+  <button onclick="removeClass()">Remove Highlighted Class</button>
+
+  <script>
+    function addClass() {
+      const myHeading = document.getElementById("myHeading");
+      myHeading.classList.add("highlighted"); // Add the "highlighted" class
+    }
+
+    function removeClass() {
+      const myHeading = document.getElementById("myHeading");
+      myHeading.classList.remove("highlighted"); // Remove the "highlighted" class
+    }
+  </script>
+</body>
+
+</html>
