@@ -1,0 +1,30 @@
+<input id="myInput" type="text" placeholder="Name">
+
+<button onclick="myFunction()">Answer</button>
+
+<p>Retrieve from Local Storage: <span id="retrieve-localstorage"> </span></p>
+
+<script>
+
+    function getName() {
+        let username = localStorage.getItem("userName");
+        let retrieve = document.getElementById('retrieve-localstorage');
+        retrieve.innerHTML = username;
+
+    }
+
+    function myFunction() {
+        // Gets input value
+        var name = document.getElementById("myInput").value;
+
+        // Saves data to retrieve later
+        localStorage.setItem("userName", name);
+        console.log("Stored!")
+
+        getName();
+
+        document.getElementById("myInput").value = "";
+    }
+
+
+</script>

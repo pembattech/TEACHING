@@ -104,7 +104,7 @@ all elements with the class "important" and then sets a yellow background color 
 </html>
 
 
-<!-- 3. Dynamic Heading Class Control -->
+<!-- 5. Dynamic Heading Class Control -->
 <!DOCTYPE html>
 <html>
 
@@ -126,4 +126,25 @@ all elements with the class "important" and then sets a yellow background color 
   </script>
 </body>
 
+</html>
+
+
+<!-- 6.  -->
+<!DOCTYPE html>
+<html>
+<body>
+  <ul id="taskList"></ul>
+  <input type="text" id="newItemText">
+  <button onclick="addNewTask()">Add New Task</button>
+
+  <script>
+    function addNewTask() {
+      const taskList = document.getElementById("taskList");
+      const newTaskText = document.getElementById("newItemText").value;
+      const newListItem = document.createElement("li");
+      newListItem.textContent = newTaskText;
+      taskList.appendChild(newListItem);
+    }
+  </script>
+</body>
 </html>

@@ -1,65 +1,4 @@
-<!-- In CSS, the terms `:root` and `var()` are related to working with custom properties (sometimes called CSS variables).
-Here's a breakdown of their roles:
-
-**1. :root - The Root Element Selector:**
-
-- The `:root` selector targets the document's root element, which is typically the `<html>` element.
-- It's used to define **global custom properties** that can be inherited by descendant elements throughout the document.
-
-**Example:**
-
-```css
-:root {
---primary-color: blue;
---font-size: 16px;
-}
-```
-
-In this example, we define two custom properties within the `:root` selector:
-
-- `--primary-color`: This variable holds the value "blue" and can be used throughout the stylesheet to represent the
-primary color.
-- `--font-size`: This variable sets the base font size to "16px".
-
-**2. var() - Accessing and Using Custom Properties:**
-
-- The `var()` function allows you to access and use the values of custom properties defined anywhere in the stylesheet
-(including within the `:root` selector).
-- You can use `var()` within property values to dynamically set styles based on the defined custom properties.
-
-**Example:**
-
-```css
-body {
-color: var(--primary-color); /* Use the variable set in :root */
-font-size: var(--font-size);
-}
-
-h1 {
-color: var(--primary-color, red); /* Set a fallback value if --primary-color is not defined */
-}
-```
-
-Here, we demonstrate using `var()`:
-
-- The `body` element's color is set to the value of the `--primary-color` variable defined in the `:root` selector.
-- The `h1` element's color also uses `var(--primary-color)`. However, it provides a fallback value of "red" in case
-`--primary-color` is not defined elsewhere.
-
-**Benefits of Using `:root` and `var()':**
-
-- **Centralized Control:** Define custom properties in one place (often within `:root`) and reuse them throughout your
-stylesheet.
-- **Easier Maintenance:** Modifying a custom property value in `:root` updates all elements that use it, simplifying
-style changes.
-- **Theming:** Create themes by changing custom property values, allowing for dynamic website appearance adjustments.
-
-**In essence, `:root` provides a way to define global custom properties, while `var()` empowers you to access and
-utilize those properties for dynamic styling within your CSS.**
-
-
-
-
+<!-- Toggle dark mode and light mode -->
 <!DOCTYPE html>
 <html>
 
@@ -108,4 +47,4 @@ utilize those properties for dynamic styling within your CSS.**
     </script>
 </body>
 
-</html> -->
+</html>

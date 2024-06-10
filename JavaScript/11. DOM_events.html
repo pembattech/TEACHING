@@ -1,0 +1,75 @@
+<!-- Example 1: Click Event -->
+
+<!-- This example uses an inline event handler to display an alert message when a button is clicked. -->
+
+<button onclick="alert('Button Clicked!')">Click me</button>
+
+<!-- Example 2: Click Event with Event Listener -->
+
+<!-- This example uses an event listener to change the background color of a paragraph element when it's clicked. -->
+
+<p id="myParagraph">This is a paragraph.</p>
+
+<script>
+
+const paragraph = document.getElementById('myParagraph');
+
+paragraph.addEventListener('click', function() {
+
+  paragraph.style.backgroundColor = 'lightblue';
+
+});
+
+</script>
+
+
+<!-- Example 3: Load Event -->
+<!-- This example uses an event listener to display a message in the console when the page finishes loading. -->
+<script>
+
+window.addEventListener('load', function() {
+
+  console.log('Page loaded!');
+
+});
+</script>
+
+
+<!-- Example 4: Change Event -->
+
+<!-- This example uses an event listener to update the value of a span element when the value of an input field is changed. -->
+
+<input type="text" id="myInput">
+<span id="mySpan"></span>
+<script>
+
+const input = document.getElementById('myInput');
+
+const span = document.getElementById('mySpan');
+
+input.addEventListener('change', function() {
+
+  span.textContent = input.value;
+
+});
+
+</script>
+
+
+
+<!-- Example 5: Mouseover Event -->
+
+<!-- This example uses an event listener to change the cursor to a pointer when the mouse hovers over a button. -->
+
+<button id="myButton">Hover me</button>
+<script>
+
+const button = document.getElementById('myButton');
+
+button.addEventListener('mouseover', function() {
+
+  button.style.cursor = 'pointer';
+
+});
+
+</script>
