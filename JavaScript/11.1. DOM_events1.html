@@ -7,7 +7,17 @@
   <input type="text" name="name">
   <button type="submit">Submit</button>
 </form>
+function changetheme(){
+  document.documentElement.classList.toggle("dark-theme");
+  localStorage.setItem(theme, "dark-theme");
 
+
+  let retrieve_data = localStorage.getItem('theme')
+  if (retrieve_data == "dark-theme") {
+      localStorage.setItem("dark-theme");
+  } else {
+      localStorage.setItem("light-theme");
+  }
 <script>
 const form = document.getElementById('myForm');
 
@@ -60,3 +70,5 @@ image.addEventListener('load', function() {
   console.log('Image loaded!');
 });
 </script>
+
+

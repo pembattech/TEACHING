@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <script>
+        function validateForm() {
+            // Get form field values
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+
+            // Check if all fields are filled
+            if (name === "" || email === "" || message === "") {
+                alert("Please fill in all required fields.");
+                return false;
+            }
+
+            // Basic email validation (check for @ and .)
+            var atpos = email.indexOf("@");
+
+            var dotpos = email.lastIndexOf(".");
+
+            if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= email.length) {
+                /*
+                Condition 1: atpos < 1:
+                        Ensures that the @ character is not at the start of the email string. The position must be at least 1 (second character).
+                Condition 2: dotpos < atpos + 2:
+                        Ensures that there are at least two characters between the @ character and the . character (e.g., @xx.).
+                        This prevents invalid formats like @. or @x..
+                Condition 3: dotpos + 2 >= email.length:
+                        Ensures that there are at least two characters after the . character.
+                        This prevents invalid formats like @domain.c.
+                */
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            // Form is valid, submit it!
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Contact Us</h1>
+    <form onsubmit="return validateForm()" novalidate>
+        <!-- Name input field -->
+        <label for="name">Name: *</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <!-- Email input field -->
+        <label for="email">Email: *</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <!-- Message input field -->
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea><br><br>
+
+        <!-- Submit button -->
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
