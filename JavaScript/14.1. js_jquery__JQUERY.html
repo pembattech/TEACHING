@@ -1,0 +1,83 @@
+<!-- DOM Manipulation -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>jQuery DOM Manipulation</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <p id="message">Hello World!</p>
+  <button id="changeButton">Change Text</button>
+  <script>
+    $(document).ready(function () {
+      $("#changeButton").click(function () {
+        $("#message").text("Text Changed!");
+      });
+    });
+  </script>
+</body>
+
+</html>
+
+
+<!-- jQuery - Event Handling: -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keydown Example (jQuery)</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <p>Try pressing some keys in the input field below:</p>
+  <input type="text" id="myInput" placeholder="Enter some text">
+  <script>
+    $(document).ready(function () {
+      $("#myInput").keydown(function (event) {
+        console.log("Key pressed:", event.key);
+      });
+    });
+  </script>
+</body>
+
+</html>
+
+
+<!-- Show/Hide Content with Effects: -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>jQuery Show/Hide</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <p id="hiddenContent">This content is hidden initially.</p>
+  <button id="toggleButton">Toggle Content</button>
+  <script>
+    $(document).ready(function () {
+      $("#toggleButton").click(function () {
+        $("#hiddenContent").toggle();
+      });
+    });
+  </script>
+</body>
+
+</html>
+
+<!-- jQuery - AJAX Request: -->
+<!-- <script>
+  $.ajax({
+    url: "data.php",
+    type: "GET",
+    success: function (data) {
+      // Process the response data retrieved using jQuery
+    }
+  });
+</script> -->

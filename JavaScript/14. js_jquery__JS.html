@@ -1,0 +1,72 @@
+<!-- Example: DOM Manipulation -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Vanilla JS DOM Manipulation</title>
+</head>
+
+<body>
+  <p id="message">Hello World!</p>
+  <button id="changeButton">Change Text</button>
+  <script>
+    document.getElementById("changeButton").addEventListener("click", function () {
+      var messageElement = document.getElementById("message");
+      messageElement.textContent = "Text Changed!";
+    });
+  </script>
+</body>
+
+</html>
+
+
+<!-- Event Handling: -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keydown Example</title>
+</head>
+
+<body>
+  <p>Try pressing some keys in the input field below:</p>
+  <input type="text" id="myInput" placeholder="Enter some text">
+  <script>
+    document.getElementById("myInput").addEventListener("keydown", function (event) {
+      console.log("Key pressed:", event.key);
+    });
+  </script>
+</body>
+
+</html>
+
+
+
+<!-- Show/Hide Content with Effects: -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Vanilla JS Show/Hide</title>
+</head>
+
+<body>
+  <p id="hiddenContent">This content is hidden initially.</p>
+  <button id="toggleButton">Show/Hide</button>
+  <script>
+    var hiddenContent = document.getElementById("hiddenContent");
+    var button = document.getElementById("toggleButton");
+    button.addEventListener("click", function () {
+      if (hiddenContent.style.display === "none") {
+        hiddenContent.style.display = "block";
+      } else {
+        hiddenContent.style.display = "none";
+      }
+    });
+  </script>
+</body>
+
+</html>
