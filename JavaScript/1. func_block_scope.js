@@ -7,12 +7,7 @@ console.log(message); // Error: message is not defined
 myFunction() 
 
 //   Variables declared with let and const are block-scoped:
-if (true) {
-    let greeting = "Hi";
-    const name = "Alice";
-    console.log(greeting); // Works
-    console.log(name); // Works
-}
+
 
 console.log(greeting); // Error: greeting is not defined
 console.log(name); // Error: name is not defined
@@ -31,7 +26,7 @@ function myFunction() {
     }
 
     console.log(x); // Accessible (function scope)
-    // console.log(y); // ReferenceError: y is not defined (block scope)
+    console.log(y); // ReferenceError: y is not defined (block scope)
 }
 
 myFunction();
