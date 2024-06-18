@@ -2,7 +2,7 @@
 
 // Numbers
 let age = 30;
-let pi = 3.14159;
+let pi = 3. ;
 
 // Strings
 let name = "Alice";
