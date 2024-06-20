@@ -9,7 +9,7 @@ while (count > 0) {
 console.log("Liftoff!");
 
 // Getting a positive number from the user
-let num;
+let num = 0;
 
 while (num <= 0) {
   num = parseFloat(prompt("Enter a positive number:"));
