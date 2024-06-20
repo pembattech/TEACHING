@@ -19,7 +19,7 @@ if (product === "laptop") {
 
 // 1. Discount Calculator:
 let amount = 100;
-let couponCode = "SUMMER20";
+let couponCode = "WINTERSALE";
 
 if (couponCode === "SUMMER20") {
   let discount = amount * 0.1; // 10% discount
@@ -36,7 +36,7 @@ if (couponCode === "SUMMER20") {
 
 // 2. Age Verification and Movie Rating System
 let age = 17;
-let movieRating = "PG-13";
+let movieRating = "PG-18";
 
 if (age >= 18) {
   console.log("You are allowed to watch any movie rating.");
@@ -48,7 +48,7 @@ if (age >= 18) {
 
 
 // 3. Traffic Light Simulator:
-let light = "ared";
+let light = "red";
 
 if (light === "red") {
   console.log("Stop!");

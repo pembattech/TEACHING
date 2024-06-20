@@ -90,8 +90,8 @@ points--; // Decrements points to 9
 
 // Postfix increment
 let a = 10;
-console.log(x++); // 10 (logs the current value of x, then increments)
-console.log(x);   // 11 (x is now incremented)
+console.log(a++); // 10 (logs the current value of x, then increments)
+console.log(a);   // 11 (x is now incremented)
 
 // Prefix increment
 let y = 10;
