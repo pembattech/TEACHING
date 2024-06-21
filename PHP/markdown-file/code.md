@@ -146,15 +146,12 @@ switch ($userRole) {
 You have editing permissions.
 ```
 
-**Explanation:**
-
-* This example demonstrates checking for multiple values in a single case.
+**Note:**
 * The `admin` and `editor` cases have the same code block because they share the same permission.
 
 
 ## Simpler Loop Examples in PHP:
 
-Here are some basic loop examples in PHP with explanations and outputs:
 
 **1. for loop (printing numbers 1 to 5):**
 
@@ -170,12 +167,7 @@ for ($i = 1; $i <= 5; $i++) {
 1 2 3 4 5 
 ```
 
-**Explanation:**
 
-* This `for` loop iterates 5 times.
-* The counter `$i` starts at 1 and increments by 1 in each iteration.
-* The loop continues as long as `$i` is less than or equal to 5 (`<=`).
-* Inside the loop, the current value of `$i` is printed with a space.
 
 **2. while loop (repeating a message):**
 
