@@ -92,8 +92,6 @@ $fullName = $firstName . " " . $lastName;
 echo "Full Name: $fullName<br><br>";
 
 
-
-
 // Array Operators
 $fruits = ["apple", "banana", "orange"];
 
