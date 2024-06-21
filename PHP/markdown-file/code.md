@@ -1,5 +1,3 @@
-Sure, here are the rewritten examples with their expected outputs:
-
 **1. Simple if statement:**
 
 ```php
@@ -74,16 +72,7 @@ if (empty($username)) {
 Please enter your username.
 ```
 
-I've replaced the placeholder values (`$age` and `$grade`) to demonstrate the output based on specific conditions. Remember that the actual output will vary depending on the values assigned to the variables in your code.
-
-
-
-
-
-
-
-
-Here are some examples of switch statements in PHP with their outputs:
+## switch statements in PHP:
 
 **1. Checking day of the week:**
 
@@ -102,18 +91,13 @@ switch ($day) {
 }
 ```
 
-**Output:** (assuming `$day` is set to "Tuesday")
+**Output:**
 
 ```
 It's a weekday. Back to work.
 ```
 
-**Explanation:**
 
-* The `switch` statement checks the value of the `$day` variable.
-* If the value matches "Saturday" or "Sunday", the corresponding case block is executed, printing a message.
-* The `break` statement after each case block ensures the switch statement exits after a matching case is found.
-* The `default` case acts as a catch-all if none of the other cases match, printing a message for weekdays.
 
 **2. Checking letter grade:**
 
@@ -132,17 +116,11 @@ switch (true) { // Using boolean expression for flexibility
 }
 ```
 
-**Output:** (assuming `$grade` is set to 88)
+**Output:**
 
 ```
 Great job! You got a B.
 ```
-
-**Explanation:**
-
-* This example uses a boolean expression in each case for more flexibility.
-* It checks if the `$grade` is greater than or equal to specific values.
-* Similar to the previous example, `break` statements prevent fall-through to the next case, and `default` handles unmatched values.
 
 **3. Checking for multiple values in a case:**
 
@@ -162,7 +140,7 @@ switch ($userRole) {
 }
 ```
 
-**Output:** (assuming `$userRole` is set to "admin")
+**Output:**
 
 ```
 You have editing permissions.
@@ -172,12 +150,6 @@ You have editing permissions.
 
 * This example demonstrates checking for multiple values in a single case.
 * The `admin` and `editor` cases have the same code block because they share the same permission.
-* `break` ensures the code only executes once after a matching case is found.
-
-Remember that the `switch` statement is useful for comparing a value to a set of possible options. It can provide a cleaner alternative to long chains of `if` statements when dealing with multiple conditions.
-
-
-
 
 
 ## Simpler Loop Examples in PHP:
