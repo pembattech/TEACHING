@@ -1,39 +1,106 @@
-to Use Built-in Functions for Numbers in PHP
-I previously listed the few functions we commonly use for strings.
 
-Let’s make a list of the functions we use with numbers:
+## Built-in Functions for Numbers in PHP
 
-round() to round a decimal number, up/down depending if the value is > 0.5 or smaller
-ceil() to round a a decimal number up
-floor() to round a decimal number down
-rand() generates a random integer
-min() finds the lowest number in the numbers passed as arguments
-max() finds the highest number in the numbers passed as arguments
-is_nan() returns true if the number is not a number
+* **`round(number, precision)`:** Rounds a number to the nearest integer. Positive values above 0.5 round up, while values below 0.5 round down. You can optionally specify the `precision` (number of decimal places) for rounding.
+  
+```php
+$num1 = 3.14159;
+$rounded1 = round($num1);
+$rounded2 = round($num1, 2);
+
+echo "Original number: $num1 \n";
+echo "Rounded to nearest integer: $rounded1 \n";  // Output: 3
+echo "Rounded to 2 decimal places: $rounded2 \n"; // Output: 3.14
+```
+
+* **`ceil(number)`:** Rounds a number up to the nearest integer. This function always rounds away from zero.
+
+```php
+$num2 = 2.5;
+$ceiling = ceil($num2);
+
+echo "Original number: $num2 \n";
+echo "Rounded up to nearest integer: $ceiling \n"; // Output: 3
+```
+
+* **`floor(number)`:** Rounds a number down to the nearest integer. This function always rounds towards zero.
+
+```php
+$num3 = -1.8;
+$floored = floor($num3);
+
+echo "Original number: $num3 \n";
+echo "Rounded down to nearest integer: $floored \n"; // Output: -2
+```
+
+* **`rand(min, max)`:** Generates a random integer between the specified `min` (inclusive) and `max` (exclusive) values. If no arguments are provided, it generates a pseudo-random number between 0 and the largest possible value for an integer on your system.
+
+```php
+$rand_num = rand(1, 10);
+
+echo "Random number between 1 and 10 (exclusive): $rand_num \n";
+// Output will vary on each run (e.g., 3, 7, 9)
+```
+
+* **`min(number1, number2, ...)`:** Returns the lowest value from a list of numbers provided as arguments.
+
+```php
+$numbers = array(5, -2, 8, 1);
+$min_value = min($numbers);
+
+echo "Minimum value in the array: $min_value \n"; // Output: -2
+```
+
+* **`max(number1, number2, ...)`:** Returns the highest value from a list of numbers provided as arguments.
+
+```php
+$numbers = array(5, -2, 8, 1);
+$max_value = max($numbers);
+
+echo "Maximum value in the array: $max_value \n"; // Output: 8
+```
+
+* **`is_nan(number)`:** Checks if the value is a "Not a Number" (NaN) value and returns `true` if it is, `false` otherwise.
+
+```php
+$valid_num = 3.14;
+$invalid_num = acos(2); // acos(2) results in NaN
+
+echo "is_nan applied to valid number: " . is_nan($valid_num) . "\n"; // Output: false
+echo "is_nan applied to NaN value: " . is_nan($invalid_num) . "\n"; // Output: true
+```
 
 
 
 
-Useful Functions for Arrays in PHP
-As with strings and numbers, PHP provides lots of very useful functions for arrays. We’ve seen count(), in_array(), array_search() – let’s see some more:
 
-is_array() to check if a variable is an array
-array_unique() to remove duplicate values from an array
-array_search() to search a value in the array and return the key
-array_reverse() to reverse an array
-array_reduce() to reduce an array to a single value using a callback function
-array_map() to apply a callback function to each item in the array. Typically used to create a new array by modifying the values of an existing array, without altering it.
-array_filter() to filter an array to a single value using a callback function
-max() to get the maximum value contained in the array
-min() to get the minimum value contained in the array
-array_rand() to get a random item from the array
-array_count_values() to count all the values in the array
-implode() to turn an array into a string
-array_pop() to remove the last item of the array and return its value
-array_shift() same as array_pop() but removes the first item instead of the last
-sort() to sort an array
-rsort() to sort an array in reverse order
-array_walk() similarly to array_map() does something for every item in the array, but in addition it can change values in the existing array
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
