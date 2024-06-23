@@ -1,6 +1,7 @@
 **1. Assigning a Complete Array:**
 
 ```php
+<?php
 $fruits = array("apple", "banana", "orange");
 
 // Assigning the entire array to another variable
@@ -17,11 +18,13 @@ $copiedFruits[1] = "mango";
 
 echo "Original fruits after modification: ";
 print_r($fruits);  // Output: Array ( [0] => apple [1] => mango [2] => orange )
+?>
 ```
 
 **2. Spread Operator (`...`) for Unpacking Elements:**
 
 ```php
+<?php
 $colors = ["red", "green", "blue"];
 
 // Using spread operator to create a new array with additional elements
@@ -29,11 +32,13 @@ $expandedColors = ["yellow", ...$colors, "purple"];
 
 echo "Expanded colors: ";
 print_r($expandedColors);  // Output: Array ( [0] => yellow [1] => red [2] => green [3] => blue [4] => purple )
+?>
 ```
 
 **3. Advanced Operations with `array_merge()` and `array_diff()`:**
 
 ```php
+<?php
 $numbers1 = array(1, 2, 4);
 $numbers2 = array(2, 3, 5);
 
@@ -48,4 +53,5 @@ $difference = array_diff($numbers1, $numbers2);
 
 echo "Difference: ";
 print_r($difference);  // Output: Array ( [0] => 1 [1] => 4 )
+?>
 ```
