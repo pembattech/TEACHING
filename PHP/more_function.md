@@ -1,0 +1,186 @@
+### Examples demonstrating both named functions and anonymous functions in PHP:
+
+**1. String formatting:**
+
+**Named Function:**
+
+```php
+function formatFullName($firstName, $lastName) {
+  return ucfirst($firstName) . " " . ucfirst($lastName);
+}
+
+$fullName = formatFullName("jane", "doe");
+echo "Formatted name: $fullName"; // Output: Formatted name: Jane Doe
+```
+
+**Anonymous Function:**
+
+```php
+$formatFullName = function($firstName, $lastName) {
+  return ucfirst($firstName) . " " . ucfirst($lastName);
+};
+
+$fullName = $formatFullName("jane", "doe");
+echo "Formatted name: $fullName"; // Output: Formatted name: Jane Doe
+```
+
+**2. Checking if a number is divisible by 3:**
+
+**Named Function:**
+
+```php
+function isDivisibleByThree($number) {
+  return $number % 3 === 0;
+}
+
+$number = 15;
+if (isDivisibleByThree($number)) {
+  echo "$number is divisible by 3";
+} else {
+  echo "$number is not divisible by 3";
+} // Output: 15 is divisible by 3
+```
+
+**Anonymous Function:**
+
+```php
+$isDivisibleByThree = function($number) {
+  return $number % 3 === 0;
+};
+
+$number = 15;
+if ($isDivisibleByThree($number)) {
+  echo "$number is divisible by 3";
+} else {
+  echo "$number is not divisible by 3";
+} // Output: 15 is divisible by 3
+```
+
+**3. Calculating the area of a circle:**
+
+**Named Function:**
+
+```php
+function calculateCircleArea($radius) {
+  return pi() * $radius * $radius;
+}
+
+$radius = 5;
+$area = calculateCircleArea($radius);
+echo "Area of the circle: $area"; // Output: Area of the circle: 78.53975
+```
+
+**Anonymous Function:**
+
+```php
+$calculateCircleArea = function($radius) {
+  return pi() * $radius * $radius;
+};
+
+$radius = 5;
+$area = $calculateCircleArea($radius);
+echo "Area of the circle: $area"; // Output: Area of the circle: 78.53975
+```
+
+**4. Filtering products by price range:**
+
+**Named Function:**
+
+```php
+function filterProductsByPrice($products, $minPrice, $maxPrice) {
+  $filteredProducts = [];
+  foreach ($products as $product) {
+    if ($product["price"] >= $minPrice && $product["price"] <= $maxPrice) {
+      $filteredProducts[] = $product;
+    }
+  }
+  return $filteredProducts;
+}
+
+$products = [
+  ["name" => "Shirt", "price" => 20],
+  ["name" => "Hat", "price" => 15],
+  ["name" => "Jeans", "price" => 50],
+];
+
+$filteredProducts = filterProductsByPrice($products, 20, 40);
+print_r($filteredProducts); 
+// Output: Array ( [0] => Array ( [name] => Shirt [price] => 20 ) [1] => Array ( [name] => Jeans [price] => 50 ) )
+```
+
+**Anonymous Function:**
+
+```php
+$filterProductsByPrice = function($products, $minPrice, $maxPrice) {
+  return array_filter($products, function($product) use ($minPrice, $maxPrice) {
+    return $product["price"] >= $minPrice && $product["price"] <= $maxPrice;
+  });
+};
+
+$products = [
+  ["name" => "Shirt", "price" => 20],
+  ["name" => "Hat", "price" => 15],
+  ["name" => "Jeans", "price" => 50],
+];
+
+$filteredProducts = $filterProductsByPrice($products, 20, 40);
+print_r($filteredProducts); 
+// Output: Array ( [0] => Array ( [name] => Shirt [price] => 20 ) [1] => Array ( [name] => Jeans [price] => 50 ) )
+```
+
+**Finding an Item in an Array:**
+
+**Named Function:**
+
+```php
+function findItemInArray($array, $searchValue) {
+  foreach ($array as $item) {
+    if ($item === $searchValue) {
+      return $item;
+    }
+  }
+  return null; // Indicate item not found
+}
+
+$fruits = ["apple", "banana", "orange", "mango"];
+$foundFruit = findItemInArray($fruits, "orange");
+echo $foundFruit; // Output: orange
+```
+
+**Anonymous Function:**
+
+```php
+$fruits = ["apple", "banana", "orange", "mango"];
+$found = array_find($fruits, function($fruit) { return $fruit == "orange"; });
+echo $found; // Output: orange
+```
+
+
+
+**Iterating with forEach:**
+
+**Named Function:**
+
+```php
+function iterateWithForEach($data) {
+  foreach ($data as $key => $value) {
+    echo "$key: $value\n";
+  }
+}
+
+$data = ["name" => "Alice", "age" => 30];
+iterateWithForEach($data);
+// Output:
+// name: Alice
+// age: 30
+```
+
+**Anonymous Function:**
+
+```php
+$data = ["name" => "Alice", "age" => 30];
+forEach($data, function($value, $key) { echo "$key: $value\n"; });
+// Output:
+// name: Alice
+// age: 30
+```
