@@ -1,0 +1,73 @@
+**Create: Inserting New Data**
+
+```php
+<?php
+
+$sql = "INSERT INTO users (name, email, phone)
+VALUES ('John Doe', 'johndoe@example.com', '123-456-7890')";
+
+if ($conn->query($sql) === TRUE) {
+  echo "New record created successfully";
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+?>
+```
+
+**Read: Retrieving Data**
+
+```php
+<?php
+
+$sql = "SELECT * FROM users";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo "id: " . $row["id"]. " - Name: " . $row["name"]. "<br>";
+  }
+} else {
+  echo "0 results";
+}
+
+$conn->close();
+?>
+```
+
+**Update: Modifying Existing Data**
+
+```php
+<?php
+
+$sql = "UPDATE users SET name='Jane Doe' WHERE id=2";
+
+if ($conn->query($sql) === TRUE) {
+  echo "Record updated successfully";
+} else {
+  echo "Error updating record: " . $conn->error;
+}
+
+$conn->close();
+?>
+```
+
+
+**Delete: Removing Data**
+
+```php
+<?php
+
+$sql = "DELETE FROM users WHERE id=3";
+
+if ($conn->query($sql) === TRUE) {
+  echo "Record deleted successfully";
+} else {
+  echo "Error deleting record: " . $conn->error;
+}
+
+$conn->close();
+?>
+```
