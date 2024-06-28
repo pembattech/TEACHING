@@ -1,0 +1,143 @@
+## Examples of working with dates in PHP:
+
+**1. Getting the Current Date and Time:**
+
+```php
+$today = date("Y-m-d H:i:s");  // Outputs something like "2024-06-28 18:04:07"
+
+echo "Today's date and time: $today";
+```
+
+**Output:**
+
+```
+Today's date and time: 2024-06-28 (This will update to the current time when you run the script)
+```
+
+**2. Converting Between Formats:**
+
+```php
+$dateString = "July 14, 2025";
+$timestamp = strtotime($dateString);  // Convert to timestamp
+
+$formattedDate = date("d/m/Y", $timestamp);  // Convert timestamp back to format with "/" separators
+
+echo "Converted date: $formattedDate";  // Outputs: 14/07/2025
+```
+
+**Output:**
+
+```
+Converted date: 14/07/2025
+```
+
+**3. Calculating Age based on Birthdate:**
+
+```php
+function calculateAge($birthdateString) {
+  $birthdate = strtotime($birthdateString);  // Convert birthdate string to timestamp
+  $now = time();  // Get current timestamp
+  $age = date('Y', $now) - date('Y', $birthdate); 
+
+  // Check for months and days if birthdate is in the current year
+  if (date('md', $now) < date('md', $birthdate)) {
+    $age--;
+  }
+
+  return $age;
+}
+
+$birthdate = "1980-01-31";
+$age = calculateAge($birthdate);
+
+echo "Age: $age";
+```
+
+**Output:** (assuming today's date is June 28, 2024)
+
+```
+Age: 44
+```
+
+**4. Finding Days Until a Specific Event:**
+
+```php
+$eventDate = "2024-12-25";  // Christmas 2024
+$eventTimestamp = strtotime($eventDate);
+$today = time();
+
+$daysUntilEvent = (int)(($eventTimestamp - $today) / (60 * 60 * 24));
+
+echo "Days until Christmas: $daysUntilEvent";
+```
+
+**Output:** (assuming today's date is June 28, 2024)
+
+```
+Days until Christmas: 180
+```
+
+**5. Displaying Events Happening Soon:**
+
+```php
+$today = time();
+
+// Today's events
+$todayEvents = strtotime('today');
+
+// Events happening tomorrow
+$tomorrowEvents = strtotime('tomorrow');
+
+// Events happening next week
+$nextWeekEvents = strtotime('next week');
+
+echo "Events happening today: " . date("Y-m-d", $todayEvents) . PHP_EOL;
+echo "Events happening tomorrow: " . date("Y-m-d", $tomorrowEvents) . PHP_EOL;
+echo "Events happening next week (starting): " . date("Y-m-d", $nextWeekEvents) . PHP_EOL;
+```
+
+**Output:** (assuming today's date is June 28, 2024)
+
+```
+Events happening today: 2024-06-28
+Events happening tomorrow: 2024-06-29
+Events happening next week (starting): 2024-07-01
+```
+
+**6. Checking for Past or Upcoming Birthdays:**
+
+```php
+function isBirthdaySoon($birthdateString) {
+  $birthdate = strtotime($birthdateString);
+  $today = time();
+  $birthYear = date('Y', $birthdate);
+  $currentYear = date('Y', $today);
+
+  // Check if birthday has already passed this year
+  $birthdayThisYear = strtotime($birthYear . '-' . date('m-d', $birthdate));
+  if ($birthdayThisYear < $today) {
+    $nextBirthday = strtotime('+1 year', $birthdayThisYear);
+  } else {
+    $nextBirthday = $birthdayThisYear;
+  }
+
+  $daysUntilBirthday = (int)(($nextBirthday - $today) / (60 * 60 * 24));
+
+  return $daysUntilBirthday <= 7; // Change this to desired timeframe (e.g., <= 30 for birthdays within a month)
+}
+
+$birthdate = "1990-05-12";
+
+
+if (isBirthdaySoon($birthdate)) {
+  echo "Happy almost birthday!";
+} else {
+  echo "Birthday is not soon.";
+}
+```
+
+**Output:** (assuming today's date is June 28, 2024)
+
+```
+Birthday is not soon.
+```
