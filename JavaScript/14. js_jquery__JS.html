@@ -1,23 +1,14 @@
 <!-- Example: DOM Manipulation -->
-<!DOCTYPE html>
-<html>
 
-<head>
-  <title>Vanilla JS DOM Manipulation</title>
-</head>
+<p id="message">Hello World!</p>
+<button id="changeButton">Change Text</button>
+<script>
+  document.getElementById("changeButton").addEventListener("click", function () {
+    var messageElement = document.getElementById("message");
+    messageElement.textContent = "Text Changed!";
+  });
+</script>
 
-<body>
-  <p id="message">Hello World!</p>
-  <button id="changeButton">Change Text</button>
-  <script>
-    document.getElementById("changeButton").addEventListener("click", function () {
-      var messageElement = document.getElementById("message");
-      messageElement.textContent = "Text Changed!";
-    });
-  </script>
-</body>
-
-</html>
 
 
 <!-- Event Handling: -->
