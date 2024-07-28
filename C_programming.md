@@ -181,23 +181,24 @@ A C program typically consists of:
 * `scanf` for formatted input (e.g., `scanf("%d", &age);`).
 
 ### getch() in C
-**getch()** is a non-standard function in C primarily used for console-based input. It's defined in the `conio.h` header file, which is commonly used on Windows platforms.
+**`getch()`** is a non-standard function in C primarily used for console-based input. It's defined in the `conio.h` header file, which is commonly used on Windows platforms.
 
-### Functionality
-* **Reads a single character** from the keyboard.
-* **Does not echo** the character to the console.
-* **Waits for input** before proceeding.
+* **Functionality:**
+    * **Reads a single character** from the keyboard.
+    * **Does not echo** the character to the console.
+    * **Waits for input** before proceeding.
 
-### Syntax
-```c
-#include <stdio.h>
+* **Example of using getch:**
+    ```c
+    #include <stdio.h>
+    #include <conio.h>
 
-int main() {
-    printf("Hello, World!\n");
-    
-    getch();
-}
-```
+    int main() {
+        printf("Hello, World!\n");
+
+        getch();
+    }
+    ```
 
 # Examples:
 ### Conditional Statements
@@ -288,13 +289,8 @@ int main() {
 }
 ```
 
-These are just basic examples to get you started. C offers a vast range of possibilities, and you can explore more complex programs and concepts as you progress. 
-Would you like to explore a specific topic or create a more complex program? 
-
-
 ## Examples Derived Data Types in C
 
-Derived data types are built upon the primary data types (int, float, char, etc.) to create more complex structures.
 
 ### 1. Arrays
 
