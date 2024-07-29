@@ -1,5 +1,3 @@
-Here are C programs for the tasks you mentioned, along with sample outputs.
-
 ### Sum & Average of 3 Numbers
 
 ```c
