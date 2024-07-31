@@ -178,9 +178,6 @@ Enter the marks: 85
 Grade B
 ```
 
-### Grade of a Student Using If-Else
-
-(Already covered above)
 
 ### Character is Vowel or Consonant
 
