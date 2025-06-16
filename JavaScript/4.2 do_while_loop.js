@@ -8,7 +8,7 @@ do {
 
 console.log("You guessed it right!");
 
-//2. Rolling a die until getting a 6
+//2. Rolling a dice until getting a 6
 let roll = 0;
 
 do {

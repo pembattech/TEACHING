@@ -2,11 +2,10 @@
 1. Accessing Elements by Tag Name
 This program demonstrates selecting all `<p>` (paragraph) elements on the webpage using `getElementsByTagName`. It loops through the resulting collection and changes the text color of each paragraph to red.
 -->
-
 <!DOCTYPE html>
 <html>
-
 <body>
+
   <h1>Main Heading</h1>
   <p>This is a paragraph.</p>
   <p class="special">This is a special paragraph.</p>
@@ -15,14 +14,15 @@ This program demonstrates selecting all `<p>` (paragraph) elements on the webpag
   <script>
     function changeParagraphs() {
       const allParagraphs = document.getElementsByTagName("p");
-      for (let paragraph of allParagraphs) {
-        paragraph.style.color = "red";
+      for (let i = 0; i < allParagraphs.length; i++) {
+        allParagraphs[i].style.color = "red";
       }
     }
   </script>
-</body>
 
+</body>
 </html>
+
 
 <!--
 2. Targeting Elements by Class Name
@@ -43,10 +43,11 @@ all elements with the class "important" and then sets a yellow background color 
   <script>
     function highlightImportant() {
       const importantParagraphs = document.getElementsByClassName("important");
-      for (let paragraph of importantParagraphs) {
-        paragraph.style.backgroundColor = "yellow";
+      for (let i = 0; i < importantParagraphs.length; i++) {
+        importantParagraphs[i].style.backgroundColor = "yellow";
       }
     }
+    
   </script>
 </body>
 
@@ -96,7 +97,9 @@ all elements with the class "important" and then sets a yellow background color 
   <script>
     function addBorders() {
       const allImages = document.querySelectorAll("img");
-      allImages.forEach(image => image.style.border = "2px solid blue");
+      for (let i = 0; i < allImages.length; i++) {
+        allImages[i].style.border = "2px solid blue";
+      }
     }
   </script>
 </body>
@@ -116,12 +119,12 @@ all elements with the class "important" and then sets a yellow background color 
   <script>
     function addClass() {
       const myHeading = document.getElementById("myHeading");
-      myHeading.classList.add("highlighted"); // Add the "highlighted" class
+      myHeading.classList.add("highlighted");
     }
 
     function removeClass() {
       const myHeading = document.getElementById("myHeading");
-      myHeading.classList.remove("highlighted"); // Remove the "highlighted" class
+      myHeading.classList.remove("highlighted");
     }
   </script>
 </body>

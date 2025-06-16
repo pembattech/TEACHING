@@ -4,8 +4,8 @@
 $x = 10;
 $y = 5;
 
-$sum = $x + $y;
-$difference = $x - $y;
+$sum = $x + $y;// 10 + 5
+$difference = $x - $y; // 10-5
 $product = $x * $y;
 $division = $x / $y;  // Returns float (5)
 $remainder = $x % $y;  // Remainder after division (0)
@@ -50,7 +50,7 @@ $isLessThan = ($a < $b);
 
 echo "Is a equal to b? $isEqual<br>";  // False
 echo "Is a greater than b? $isGreater<br>";  // False
-echo "Is a less than b? $isLessThan<br><br>";
+echo "Is a less than b? $isLessThan<br><br>";  // True
 
 // Output:
 // Is a equal to b? False

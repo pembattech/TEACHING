@@ -12,6 +12,7 @@ function myFunction() {
     echo $globalVar; // Outputs: I'm a global variable
 }
 
+
 myFunction();
 
 // Static variable example

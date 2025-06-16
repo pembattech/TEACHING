@@ -2,14 +2,13 @@
 
 // Numbers
 let age = 30;
-let pi = 3. ;
+let pi = 3.14 ;
 
 // Strings
 let name = "Alice";
 let message = 'Hello, world!';
 
 // Boolean
-let isLoggedIn = true;
 let isNightTime = false;
 
 // Undefined
@@ -18,17 +17,17 @@ let uninitializedVar;
 // Null
 let emptyValue = null;
 
-// Symbol
-let uniqueSymbol = Symbol("description"); // Unique identifier
-console.log(uniqueSymbol); // Output: Symbol(description) (unique value)
-let uniqueSymbol1 = Symbol("description"); // Unique identifier
-console.log(uniqueSymbol); // Output: Symbol(description) (unique value)
+// // Symbol
+// let uniqueSymbol = Symbol("description"); // Unique identifier
+// console.log(uniqueSymbol); // Output: Symbol(description) (unique value)
+// let uniqueSymbol1 = Symbol("description"); // Unique identifier
+// console.log(uniqueSymbol); // Output: Symbol(description) (unique value)
 
-console.log(uniqueSymbol == uniqueSymbol1);
+// console.log(uniqueSymbol == uniqueSymbol1);
 
 
 // BigInt
-let bigIntNumber = 12345678901234567890n; // BigInt literal
+let bigIntNumber = 12345678901234567890n;
 console.log(typeof bigIntNumber); // Output: bigint
 
 
@@ -44,8 +43,8 @@ let person = {
 };
 console.log(person);
 
-person.test = 'test'; // Append new item
-delete person.test; // Delete test property
+person.address = 'Bhaktapur'; // Append new item
+delete person.address; // Delete test property
 
 // Array
 let abc = ["apple", "banana", "orange", "mango"];
@@ -73,6 +72,7 @@ let isGreaterThan = 7 > 5;
 let isLessThanOrEqualTo = 4 <= 4;
 
 // Logical Operators
+let isLoggedIn = true;
 let isMember = (age >= 18) && isLoggedIn; // AND
 let hasAccess = isLoggedIn || isMember; // OR
 let isNotAdmin = !isAdmin; // NOT

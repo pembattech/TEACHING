@@ -39,7 +39,6 @@ console.log(phoneRegex.test(phoneNumber)); // Output: true
 // 1. `match(string)`:
   // - Returns an array of all matches of the pattern in the string.
   // - Returns an empty array `[]` if there are no matches.
-  // - Example:
 
   const text5 = "This is a sentence with repeated words words";
   const wordRegex = /\bwords\b/g;
@@ -49,9 +48,8 @@ console.log(phoneRegex.test(phoneNumber)); // Output: true
 // 2. `search(string)`:
   // - Returns the index of the first match of the pattern in the string.
   // - Returns -1 if no match is found.
-  // - Example:
 
-  const text6 = "Find the hidden code 1234";
+  const text6 = "Find the hidden code 12345";
   const codeRegex = /\d{4}/;
   const codeIndex = text6.search(codeRegex);
   console.log(codeIndex); // Output: 21

@@ -5,9 +5,14 @@
         grid-template-rows: 100px 100px 100px;
         grid-gap: 10px;
         grid-template-areas:
-            "header header header"
-            "sidebar main main"
-            "footer footer footer";
+            "sidebar header header"
+            "sidebar pemba main"
+            "footer footer main"
+            "footer footer main";
+    }
+
+    .pemba {
+        grid-area: pemba;
     }
 
     .header {
@@ -44,6 +49,7 @@
             grid-template-columns: 1fr;
             /* Single column for smaller screens */
             grid-template-areas:
+                "pemba"
                 "header"
                 "sidebar"
                 "main"
@@ -53,8 +59,9 @@
 </style>
 
 <div class="grid-container">
+    <div class="pemba">epmba</div>
     <div class="header">Header</div>
     <div class="sidebar">Sidebar</div>
     <div class="main">Main Content</div>
-    <div class="footer">https://thefront.maccarianagency.com/demos/ecommerce</div>
+    <div class="footer">This is footer</div>
 </div>

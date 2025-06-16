@@ -1,20 +1,19 @@
-<!-- Example 1: Click Event -->
-<!-- This example uses an inline event handler to display an alert message when a button is clicked. -->
+<!-- Example 1: Click Event
+This example uses an inline event handler to display an alert message when a button is clicked. -->
 
 <button onclick="alert('Button Clicked!')">Click me</button>
 
-<!-- Example 2: Click Event with Event Listener -->
-<!-- This example uses an event listener to change the background color of a paragraph element when it's clicked. -->
+<!-- Example 2: Click Event with Event Listener This example uses an event listener to change the background color of a paragraph element when it's clicked. -->
 <p id="myParagraph"> This is a paragraph.</p>
 <script>
 
-const paragraph = document.getElementById('myParagraph');
+  const paragraph = document.getElementById('myParagraph');
 
-paragraph.addEventListener('click', function() {
+  paragraph.addEventListener('click', function () {
 
-  paragraph.style.backgroundColor = 'lightblue';
+    paragraph.style.backgroundColor = 'lightblue';
 
-});
+  });
 
 </script>
 
@@ -23,12 +22,12 @@ paragraph.addEventListener('click', function() {
 <!-- This example uses an event listener to display a message in the console when the page finishes loading. -->
 <script>
 
-window.addEventListener('load', function() {
+  window.addEventListener('load', function () {
 
-  console.log('Page loaded!');
-  alert("Page loaded!")
+    console.log('Page loaded!');
+    alert("Page loaded!")
 
-});
+  });
 </script>
 
 
@@ -40,15 +39,15 @@ window.addEventListener('load', function() {
 <span id="mySpan"></span>
 <script>
 
-const input = document.getElementById('myInput');
+  const input = document.getElementById('myInput');
 
-const span = document.getElementById('mySpan');
+  const span = document.getElementById('mySpan');
 
-input.addEventListener('change', function() {
+  input.addEventListener('change', function () {
 
-  span.textContent = input.value;
+    span.textContent = input.value;
 
-});
+  });
 
 </script>
 
@@ -61,13 +60,13 @@ input.addEventListener('change', function() {
 <button id="myButton">Hover me</button>
 <script>
 
-const button = document.getElementById('myButton');
+  const button = document.getElementById('myButton');
 
-button.addEventListener('mouseover', function() {
+  button.addEventListener('mouseover', function () {
 
-  button.style.cursor = 'pointer';
-  
+    button.style.cursor = 'pointer';
 
-});
+
+  });
 
 </script>

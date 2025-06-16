@@ -9,8 +9,8 @@ for (let i = 1; i <= 5; i++) {
 // 2. Iterating through an array
 const fruits = ["apple", "banana", "orange"];
 
-for (let i = 0; i < fruits.length; i++) {
-  console.log(fruits[i]);
+for (let i = 0; i < 3; i++) {
+  console.log(fruits[i]); // apple banana orange
 }
 
 
@@ -23,7 +23,7 @@ for (let i = 10; i >= 1; i--) {
 // 4. Skipping elements:
 const num = [1, 2, 3, 4, 5, 6];
 
-for (let i = 0; i < num.length; i += 2) { // Increment by 2 to skip even elements
+for (let i = 0; i < num.length; i += 2) { 
   console.log(num[i]);
 }
 
@@ -38,23 +38,12 @@ for (let i = 0; i < numbers.length; i++) {
 console.log(numbers); // Output: [2, 4, 6, 8, 10]
 
 
-// 6. Nesting loops:
-const rows = 3;
-const columns = 4;
-
-for (let i = 0; i < rows; i++) {
-  for (let j = 0; j < columns; j++) {
-    console.log("Row", i + 1, "Column", j + 1);
-  }
-}
-
-
-// 7. Using a loop with conditional statements:
+// 6. Using a loop with conditional statements:
 const names = ["Alice", "Bob", "Charlie", "David"];
 
 for (let i = 0; i < names.length; i++) {
-  if (names[2] === "Charlie") {
-    console.log("Found Charlie at index", 2);
+  if (names[i] === "Charlie") {
+    console.log("Found Charlie at index", i);
     break; // Exit the loop once Charlie is found
   }
 }

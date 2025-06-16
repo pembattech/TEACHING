@@ -1,5 +1,4 @@
 <?php
-// Declaring and assigning variables
 $greeting = "Hello, World!"; // String variable
 $number = 42;               // Integer variable
 $pi = 3.14159;              // Float variable

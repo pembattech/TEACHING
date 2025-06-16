@@ -1,0 +1,20 @@
+<h1>Bulb on off project in javascript</h1>
+<div>
+    <img src="https://i.postimg.cc/KjK1wL3c/bulb-off.png" id="bulb" width="200">
+
+    <div class="btn_container">
+
+        <button id="on" class="bulb_btn" onclick="bulb_on()">on</button>
+
+        <button id="off" class="bulb_btn" onclick="bulb_off()">off</button>
+    </div>
+</div>
+
+<script>
+    function bulb_on() {
+        document.getElementById('bulb').src = 'https://i.postimg.cc/6QyTynzr/bulb-on.png';
+    }
+    function bulb_off() {
+        document.getElementById('bulb').src = 'https://i.postimg.cc/KjK1wL3c/bulb-off.png';
+    }
+</script>

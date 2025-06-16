@@ -1,3 +1,4 @@
+```html
 <style>
 
     table {
@@ -58,3 +59,7 @@
 </body>
 
 </html>
+```
+
+##### OUTPUT
+![Alt text for the image](../../output-img/output-table1.png)

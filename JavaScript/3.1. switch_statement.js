@@ -1,7 +1,7 @@
 // Day of the Week:
 let day = 3;
 
-switch (day) {
+switch (3) {
     case 0:
         console.log("Sunday");
         break;
@@ -48,21 +48,4 @@ switch (letterGrade) {
         break;
     default:
         console.log("Invalid letter grade.");
-}
-
-// 3. Navigation Menu:
-let userChoice = 2;
-
-switch (userChoice) {
-    case 1:
-        console.log("You selected option 1.");
-        break;
-    case 2:
-        console.log("You selected option 2.");
-        break;
-    case 3:
-        console.log("You selected option 3.");
-        break;
-    default:
-        console.log("Invalid menu option. Please choose from 1, 2, or 3.");
 }

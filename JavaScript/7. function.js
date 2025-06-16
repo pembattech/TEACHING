@@ -6,8 +6,7 @@ function greet(name) {
 }
 
 const message = greet("Emily");
-console.log(message); // Output: Hello, Emily!
-
+console.log(message);
 
 // 2. Function with Multiple Parameters:
 function calculateArea(width, height) {
