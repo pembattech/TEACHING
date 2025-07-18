@@ -29,6 +29,26 @@ Displays output on the screen. It is one of the most basic and commonly used fun
 
 * Try printing your name.
 
+### f-Strings
+
+* Introduced in **Python 3.6** as formatted string literals.
+* Prefixed with `f` or `F` before the opening quote.
+* Embed expressions inside `{}` within the string.
+* Expressions are evaluated at runtime and inserted into the string.
+
+
+```python
+name = "Alice"
+age = 25
+print(f"My name is {name} and I am {age} years old.")
+```
+
+##### Key Points
+
+* More readable and concise than older formatting methods.
+* Can embed any valid Python expression.
+* Supports format specifiers (e.g., `{value:.2f}` for 2 decimal places).
+
 
 ### ✅ Variables & Data Types
 
@@ -47,6 +67,17 @@ is_student = True
 * `float`: decimals → `3.14`
 * `str`: strings → `"hello"`
 * `bool`: `True` / `False`
+
+**Checking Data Types: The `type()` Function**
+
+* The `type()` function reveals the data type of a variable.
+* Syntax: `type(variable_name)`
+
+```python
+age = 25
+data_type = type(age)
+print(data_type)  # Output: <class 'int'>
+```
 
 **Input & Output:**
 
@@ -621,6 +652,26 @@ for coordinate in point:
 * For data that should not change (e.g., coordinates, configuration values)
 * Tuples can be dictionary keys because they are hashable
 
+
+**Converting Tuple to List to Add Element, Then Back to Tuple**
+```python
+# Original tuple
+my_tuple = (1, 2, 3)
+print(my_tuple)  # (1, 2, 3)
+
+# Convert tuple to list
+my_list = list(my_tuple)
+print(my_list)  # [1, 2, 3]
+
+# Add an element
+my_list.append(4)
+print(my_list)  # [1, 2, 3, 4]
+
+# Convert list back to tuple
+my_tuple = tuple(my_list)
+print(my_tuple)  # (1, 2, 3, 4)
+
+```
 ---
 
 ### Dictionaries
@@ -810,21 +861,94 @@ else:
 
 ---
 
-### ✅ Day 11: File Handling
+
+### ✅ Day 11: File Handling in Python
+
+File handling allows you to **create, read, write, and manipulate files** from your Python programs.
+
+---
+
+#### 1. Writing to a File
+
+* `"w"` mode creates a new file or **overwrites** existing content.
+* Use `with open()` to automatically close the file after operations.
 
 ```python
-# write
 with open("data.txt", "w") as f:
-    f.write("Hello World!")
-
-# read
-with open("data.txt", "r") as f:
-    print(f.read())
+    f.write("Hello World!\n")
+    f.write("Welcome to File Handling in Python.\n")
 ```
 
 ---
 
+
+#### 2. Reading from a File
+
+* `"r"` mode opens the file for reading.
+* Use `.read()`, `.readline()`, or `.readlines()`.
+
+
+  `.read()`: Reads the entire content of the file as a single string.
+
+  `.readline()`: Reads one line at a time from the file. Each call reads the next line.
+
+  `.readlines()`: Reads all lines and returns them as a list of strings, where each string is a line.
+
+
+```python
+with open("data.txt", "r") as f:
+    content = f.read()
+    print(content)
+```
+
 ---
+
+#### 3. Appending to a File
+
+* `"a"` mode opens the file for appending.
+* New data is added at the **end** without erasing existing content.
+
+```python
+with open("data.txt", "a") as f:
+    f.write("Appending a new line.\n")
+```
+
+---
+
+#### 4. Reading File Line by Line
+
+```python
+with open("data.txt", "r") as f:
+    for line in f:
+        print(line.strip())  # strip() removes trailing newline characters
+```
+
+---
+
+#### 5. Writing Multiple Lines Using `writelines()`
+
+```python
+lines = ["Line 1\n", "Line 2\n", "Line 3\n"]
+
+with open("data.txt", "w") as f:
+    f.writelines(lines)
+```
+
+---
+
+#### Other File Modes
+
+| Mode  | Description                      |
+| ----- | -------------------------------- |
+| `"r"` | Read (default)                   |
+| `"w"` | Write (overwrite existing file)  |
+| `"a"` | Append (add to end)              |
+| `"x"` | Create new file, fails if exists |
+| `"b"` | Binary mode (used with others)   |
+| `"t"` | Text mode (default)              |
+
+---
+
 
 ### ✅ Day 12: Modules
 
@@ -881,6 +1005,60 @@ print("Days since my birthday:", delta.days)
 
 ---
 
+### ✅ Error Handling: try, except, else and finally
+
+---
+
+#### 1. `try` and `except`
+
+* Run code that **may cause errors** in `try`.
+* Handle errors in `except`.
+
+```python
+try:
+    num = int(input("Enter a number: "))
+    print(f"You entered {num}")
+except ValueError:
+    print("That's not a valid number!")
+```
+
+---
+
+#### 2. `else`
+
+* Runs **only if no exception** occurred in the `try` block.
+
+```python
+try:
+    num = int(input("Enter a number: "))
+except ValueError:
+    print("Invalid input!")
+else:
+    print(f"Success! You entered {num}")
+```
+
+---
+
+#### 3. `finally`
+
+* Runs **no matter what**, even if exception happened or not.
+* Useful to release resources or do cleanup.
+
+```python
+try:
+    file = open("sample.txt", "r")
+    content = file.read()
+    print(content)
+except FileNotFoundError:
+    print("File not found!")
+finally:
+    file.close()
+    print("File closed.")
+```
+
+---
+
+
 ### ✅ Day 13: Mini Project
 
 * **Guess the number game:**
@@ -900,6 +1078,118 @@ while guess != number:
 ```
 
 ---
+
+### Handling Data with `sqlite3` in Python
+
+* **SQLite** is a lightweight, serverless database engine stored in a single file.
+* Python’s built-in `sqlite3` module allows you to work with SQLite databases easily.
+
+#### Basic Steps to Use `sqlite3`
+
+1. **Connect to a database**
+
+```python
+import sqlite3
+
+conn = sqlite3.connect('example.db')  # Creates or opens the database file
+```
+
+2. **Create a cursor object**
+
+```python
+cursor = conn.cursor()  # Used to execute SQL commands
+```
+
+3. **Create a table**
+
+```python
+cursor.execute('''
+CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY,
+    name TEXT NOT NULL,
+    age INTEGER
+)
+''')
+conn.commit()  # Save (commit) the changes
+```
+
+4. **Insert data**
+
+```python
+cursor.execute("INSERT INTO users (name, age) VALUES ('Alice', 30)")
+conn.commit()
+```
+
+5. **Query data**
+
+```python
+cursor.execute("SELECT * FROM users")
+rows = cursor.fetchall()
+
+for row in rows:
+    print(row)
+```
+
+6. **Close connection**
+
+```python
+conn.close()
+```
+
+
+**Notes**
+
+* Call `conn.commit()` after changes (INSERT, UPDATE, DELETE).
+* Use `cursor.fetchone()` to get one record or `cursor.fetchall()` for all.
+
+---
+
+### Handling Data with MySQL in Python
+
+
+#### 1. Install MySQL Connector
+
+First, install the MySQL connector library if you don’t have it:
+
+```bash
+pip install mysql-connector-python
+```
+
+
+#### 2. Code
+
+```python
+import mysql.connector
+
+conn = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="password123",
+    database="testdb"
+)
+
+cursor = conn.cursor()
+
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    age INT
+)
+""")
+
+cursor.execute("INSERT INTO users (name, age) VALUES (?, ?)", ("Bob", 25))
+conn.commit()
+
+cursor.execute("SELECT * FROM users")
+print(cursor.fetchall())
+
+cursor.close()
+conn.close()
+```
+
+---
+
 
 # 🚀 Congratulations!
 
