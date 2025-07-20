@@ -598,6 +598,21 @@ for fruit in fruits:
     print(fruit)
 ```
 
+#### Counting Elements in a Python List
+
+```python
+fruits = ['apple', 'banana', 'apple', 'orange']
+print(fruits.count('apple'))  # Output: 2
+```
+
+
+#### `len()` for Total Count
+
+```python
+fruits = ['apple', 'banana', 'apple', 'orange']
+print(len(fruits))  # Output: 4
+```
+
 **Common List Methods:**
 
 * `append(item)` – Add item to the end
