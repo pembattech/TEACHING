@@ -1,4 +1,3 @@
-
 # 🐍 Python Beginner Course
 
 ---
@@ -786,7 +785,12 @@ for key, value in student.items():
 🎯 **Exercises for Tuples:**
 1. Create a tuple representing your birth date `(year, month, day)`.
 2. Access and print each element separately.
-3. Try to change an element and observe what happens.
+    ```
+    Year: 1995
+    Month: 7
+    Day: 25
+    ```
+
 
 🎯 **Exercises for Dictionary:**
 1. Create a dictionary to store a student's name, age, and subjects.
@@ -833,7 +837,7 @@ print(s.difference(s2))  # {1}
 Functions help you reuse code and organize your program.
 
 ```python
-def greet(name):
+def greet(name, age, address, dirthofbirth):
     print("Hello, " + name)
 
 greet("Hom")
@@ -871,7 +875,7 @@ else:
 🎯 **Exercise:**
 
 * Write function to add two numbers.
-* Write a function to get the length of a word, then use that length to print if it’s a long word (length > 5) or not.
+* Write a function that takes a word, uses len() to check its length, and prints whether it's a long word (length > 5) or a short word.
 * Write a function that returns the first character of a string, then use it to check if it’s a vowel.
 
 ---
@@ -964,6 +968,120 @@ with open("data.txt", "w") as f:
 
 ---
 
+## 📦 **Python Lesson: Understanding `pip`**
+
+### 📘 **1. What is `pip`?**
+
+**`pip`** stands for **“Pip Installs Packages”**. It is the **default package manager** for Python.
+
+> 🧠 It lets you install, upgrade, and remove **third-party libraries** that aren't part of the standard Python library.
+
+---
+
+### 🧰 **2. Basic pip Commands**
+
+#### ✅ **Install a Package**
+
+```bash
+pip install package_name
+```
+
+**Example:**
+
+```bash
+pip install requests
+```
+
+#### 📤 **Uninstall a Package**
+
+```bash
+pip uninstall package_name
+```
+
+**Example:**
+
+```bash
+pip uninstall numpy
+```
+
+#### 📈 **Upgrade a Package**
+
+```bash
+pip install --upgrade package_name
+```
+
+**Example:**
+
+```bash
+pip install --upgrade flask
+```
+
+#### 📋 **List Installed Packages**
+
+```bash
+pip list
+```
+
+#### 🔍 **Check Info About a Package**
+
+```bash
+pip show package_name
+```
+
+---
+
+### 📂 **3. Install from a Requirements File**
+
+This is commonly used in projects to install all dependencies at once.
+
+```bash
+pip install -r requirements.txt
+```
+
+`requirements.txt` looks like:
+
+```
+flask==2.2.0
+requests>=2.28.0
+```
+
+---
+
+### 🔧 **4. Where pip Installs Packages**
+
+By default, pip installs packages into the **site-packages** directory inside your Python environment.
+
+You can check the install location with:
+
+```bash
+pip show package_name
+```
+
+---
+
+### 🧪 **5. Virtual Environments + pip (Best Practice)**
+
+For projects, it's best to use a **virtual environment** so that packages don’t interfere across projects:
+
+```bash
+python -m venv env
+source env/bin/activate  # On Mac/Linux
+env\Scripts\activate     # On Windows
+pip install flask
+```
+
+---
+
+### 🧯 **6. Troubleshooting pip**
+
+| Problem                  | Solution                                             |
+| ------------------------ | ---------------------------------------------------- |
+| `pip: command not found` | Use `python -m pip install ...`                      |
+| Permission denied        | Use `--user` or install inside a virtual environment |
+| Proxy issues             | Use `--proxy` option                                 |
+| SSL errors               | Upgrade pip: `python -m pip install --upgrade pip`   |
+
+---
 
 ### ✅ Day 12: Modules
 
@@ -1205,6 +1323,338 @@ conn.close()
 
 ---
 
+🎯 **Exercise:**
+**Write a Python script that does the following using SQLite:**
+
+1. Connects to (or creates) a database file named `grades.db`.
+2. Creates a table called `students` with three columns: `id` (auto-incremented primary key), `name` (text), and `grade` (integer), if it doesn't already exist.
+3. Inserts the following students into the table:
+
+   * Alice with grade 88
+   * Bob with grade 77
+   * Charlie with grade 93
+4. Retrieves and prints the names and grades of students who scored more than 80, in the format:
+
+   ```
+   High-achieving students:
+   Alice: 88
+   Charlie: 93
+   ```
+
+---
+
+### 🐍 **The `os` Module**
+
+
+#### 📦 **1. What is the `os` module?**
+
+The `os` module in Python provides a way to interact with the operating system’s functionalities—such as working with files and directories—using Python code.
+It is great for scripting tasks, automation, and system-level work.
+
+
+```python
+import os
+```
+
+
+### 📁 **2. Commonly Used `os` Functions**
+
+#### ✅ **Get current working directory**
+
+```python
+import os
+
+print(os.getcwd())  # Shows the current working directory
+```
+
+
+#### 📂 **List files in a directory**
+
+```python
+print(os.listdir())  # Lists files and folders in the current directory
+```
+
+Or specify a path:
+
+```python
+print(os.listdir("/path/to/directory"))
+```
+
+
+#### 📁 **Create a new directory**
+
+```python
+os.mkdir("new_folder")  # Creates a single folder
+```
+
+Or recursively:
+
+```python
+os.makedirs("folder/subfolder")  # Creates nested directories
+```
+
+
+#### ❌ **Remove a directory**
+
+```python
+os.rmdir("new_folder")  # Removes an empty folder
+```
+
+#### ❌ **Remove a directory pernamently**
+```python
+import shutil
+
+shutil.rmtree('path/to/non_empty_folder')
+```
+
+
+#### 🔄 **Change current working directory**
+
+```python
+os.chdir("path/to/folder")
+```
+
+
+#### 📃 **Rename a file**
+
+```python
+os.rename("old.txt", "new.txt")
+```
+
+
+### 🌍 **3. Environment Variables**
+
+```python
+print(os.environ)  # Get all environment variables
+print(os.environ.get("PATH"))  # Get a specific one
+```
+
+---
+
+### 📌 **4. Path Utilities (with `os.path`)**
+
+```python
+import os
+
+print(os.path.exists("file.txt"))  # Check if a file exists
+print(os.path.isfile("file.txt"))  # Check if it's a file
+print(os.path.isdir("folder"))     # Check if it's a folder
+```
+
+### 🧑💻 **5. Get the Current Username**
+
+```python
+import os
+
+username = os.getlogin()  # Gets the name of the logged-in user
+print("Current user:", username)
+```
+
+> ⚠️ Note: `os.getlogin()` may raise an error in some environments like IDEs or remote sessions. Use `getpass` as a fallback:
+
+```python
+import getpass
+
+username = getpass.getuser()
+print("Current user:", username)
+```
+
+---
+
+### 🖥️ **6. Get Operating System Info**
+
+#### Basic platform info using `os.name`:
+
+```python
+print("OS name:", os.name)  # 'posix', 'nt', or 'java'
+```
+
+#### Detailed system info using `platform` module:
+
+```python
+import platform
+
+print("System:", platform.system())      # e.g., Windows, Linux, Darwin
+print("Release:", platform.release())    # OS version
+print("Version:", platform.version())    # Detailed version info
+```
+
+---
+
+
+### 🧪 **7. OS Info Summary**
+
+```python
+import os
+import platform
+import getpass
+
+print("=== System Information ===")
+print("User:", getpass.getuser())
+print("OS Name:", os.name)
+print("System:", platform.system())
+print("Release:", platform.release())
+print("Version:", platform.version())
+print("Current Directory:", os.getcwd())
+```
+
+---
+
+🎯 **Exercises for OS module:**
+
+1. Create a folder called "demo", navigate into it, again create folder of your name, and navigate to the folder then print the new working directory.
+2. Using the os module, write a program that creates 5 text files named sample1.txt to sample5.txt, writes some text into each, and then deletes sample3.txt only if it exists
+
+---
+
+
+
+### 🧾 **What is Selenium?**
+
+**Selenium** is a Python library used for automating web browser interaction. It allows you to:
+
+* Open websites
+* Click buttons
+* Fill out forms
+* Scrape data
+* Test web applications
+
+---
+
+### 💻 **Installing Selenium**
+
+Use pip to install Selenium:
+
+```bash
+pip install selenium
+```
+
+You’ll also need a **WebDriver** for your browser:
+
+* Chrome → [Download ChromeDriver](https://sites.google.com/chromium.org/driver/)
+* Firefox → [Download GeckoDriver](https://github.com/mozilla/geckodriver/releases)
+
+Put the WebDriver in your PATH or specify its path in your script.
+
+---
+
+### 🚀 **First Script: Open a Website**
+
+```python
+from selenium import webdriver
+
+driver = webdriver.Chrome()  # Launches Chrome
+driver.get("https://www.google.com")  # Opens Google
+```
+
+Make sure `chromedriver` is accessible or provide the full path:
+
+```python
+driver = webdriver.Chrome(executable_path="C:/path/to/chromedriver.exe")
+```
+
+---
+
+### ✏️ **Interacting with Web Elements**
+
+#### Search on Google:
+
+```python
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+
+driver = webdriver.Chrome()
+driver.get("https://www.google.com")
+
+search_box = driver.find_element(By.NAME, "q")  # Locate search box
+search_box.send_keys("Selenium Python")         # Type search text
+search_box.send_keys(Keys.RETURN)               # Press Enter
+```
+
+---
+
+### 🔍 **Locating Elements**
+
+| Method            | Example                                         |
+| ----------------- | ----------------------------------------------- |
+| `By.ID`           | `find_element(By.ID, "username")`               |
+| `By.NAME`         | `find_element(By.NAME, "q")`                    |
+| `By.CLASS_NAME`   | `find_element(By.CLASS_NAME, "btn")`            |
+| `By.TAG_NAME`     | `find_element(By.TAG_NAME, "input")`            |
+| `By.CSS_SELECTOR` | `find_element(By.CSS_SELECTOR, "div.box")`      |
+| `By.XPATH`        | `find_element(By.XPATH, "//input[@id='name']")` |
+
+---
+
+### ✅ **Best Practices**
+
+* Always close the browser when done:
+
+```python
+driver.quit()
+```
+
+* Use `WebDriverWait` for dynamic pages:
+
+```python
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+wait = WebDriverWait(driver, 10)
+element = wait.until(EC.presence_of_element_located((By.ID, "some_id")))
+```
+
+---
+
+### 🧪 **7. Mini Project: 
+
+* **Search and Scrape Titles from Google**
+
+```python
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+
+driver = webdriver.Chrome()
+driver.get("https://www.google.com")
+
+search_box = driver.find_element(By.NAME, "q")
+search_box.send_keys("OpenAI ChatGPT")
+search_box.send_keys(Keys.RETURN)
+
+results = driver.find_elements(By.TAG_NAME, "h3")
+for title in results:
+    print(title.text)
+
+driver.quit()
+```
+
+* **Facebook Login**
+```python
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+
+driver = webdriver.Chrome()
+
+driver.get("https://www.facebook.com/")
+
+driver.maximize_window()
+
+email_field = driver.find_element(By.ID, "email")
+password_field = driver.find_element(By.ID, "pass")
+
+email_field.send_keys("your-email@example.com")     
+password_field.send_keys("your-password")           
+
+login_button = driver.find_element(By.NAME, "login")
+login_button.click()
+
+time.sleep(5)
+```
+
+---
 
 # 🚀 Congratulations!
-
